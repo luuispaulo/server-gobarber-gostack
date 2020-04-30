@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="https://www.ishanka.me/wp-content/uploads/2019/12/nodetsejs.jpg" alt="NodeJs, express and TypeScript">
+  <img src="./assets/gobarber.png" alt="NodeJs, express and TypeScript">
 </p>
 
 <br>
 
-# A TypeScript project using ExpressJs 🔥
+# 💈 A Barber application using a Client and Hairstylists
+
+### 🛠 Develop with TypeScript and ExpressJs
 
 - 📏 ESLint — JavaScript linter
 - 💖 Prettier - Code Formatter
