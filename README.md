@@ -4,7 +4,7 @@
 
 <br>
 
-# 💈 A Barber application using a Client and Hairstylists
+# 💈 A Barber application for Clients and Hairstylists
 
 ### 🛠 Develop with TypeScript and ExpressJs
 
