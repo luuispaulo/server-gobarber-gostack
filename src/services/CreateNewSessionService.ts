@@ -3,6 +3,8 @@ import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import User from '../models/User';
 
+import configAuth from '../config/auth';
+
 interface Request {
   email: string;
   password: string;
@@ -31,9 +33,9 @@ class CreateNewSessionService {
 
     delete user.password;
 
-    const token = sign({}, 'jdfiopasjfoijasiofnsduiocvnsioancsaiundasoifjioj', {
+    const token = sign({}, configAuth.jwt.secret, {
       subject: user.id,
-      expiresIn: '1d',
+      expiresIn: configAuth.jwt.expiresIn,
     });
     return {
       user,

@@ -6,7 +6,11 @@ import AppointmentsRepository from '../repositories/AppointmentRepository';
 
 import CreateAppointmentService from '../services/CreateAppointmentService';
 
+import AuthMiddleware from '../middlewares/Auth';
+
 const appointmentsRouter = Router();
+
+appointmentsRouter.use(AuthMiddleware);
 
 appointmentsRouter.get('/', async (req, res) => {
   const appointmentRepository = getCustomRepository(AppointmentsRepository);
