@@ -15,6 +15,7 @@ userRouter.post('/', async (req, res) => {
       email,
       password,
     });
+
     return res.status(200).json(user);
   } catch (err) {
     return res.status(400).json({ message: err.message });
