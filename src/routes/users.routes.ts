@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import multer from 'multer';
 import CreateUserService from '../services/CreateUserService';
+import UpdateAvatarService from '../services/UpdateAvatarService';
 
 import AuthMiddleware from '../middlewares/Auth';
 
@@ -32,8 +33,18 @@ userRouter.patch(
   AuthMiddleware,
   upload.single('avatar'),
   async (req, res) => {
-    console.log(req.file);
-    return res.status(200).json({ message: 'Ok' });
+    try {
+      const updateAvatar = new UpdateAvatarService();
+
+      const user = await updateAvatar.execute({
+        userId: req.user.id,
+        avatarFileName: req.file.filename,
+      });
+
+      return res.status(200).json(user);
+    } catch (err) {
+      return res.status(400).json({ message: err.message });
+    }
   }
 );
 
