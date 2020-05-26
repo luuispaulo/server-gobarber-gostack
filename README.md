@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/gobarber.png" alt="NodeJs, express and TypeScript">
+  <img src="./assets/gobarber.png" alt="GoBarber">
 </p>
 
 <br>
